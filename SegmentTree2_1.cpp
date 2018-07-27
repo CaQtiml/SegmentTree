@@ -6,7 +6,7 @@ void update ( int i , int v )
 {
 	for ( t[ i += n ] = v ; i != 1 ; i >>= 1 )
 	{
-		t[ i >> 1 ] = min ( t[i] , t[i^1] ) ;
+		t[ i >> 1 ] = min ( t[i] , t[i^1] ) ; //when i%2==0 i^1 is i++ ex 6^1=7
 	}
 }
 
@@ -15,7 +15,7 @@ int query ( int l , int r )
 	int mn = 1e9 ;
 	for ( l += n , r += n+1 ; l < r ; l >>= 1 , r >>= 1 )
 	{
-		if ( l & 1 ) mn = min ( mn , t[l++] ) ;
+		if ( l & 1 ) mn = min ( mn , t[l++] ) ; //l&2 is l%2==1
 		if ( r & 1 ) mn = min ( mn , t[--r] ) ;
 	}
 	return mn ;
@@ -31,8 +31,9 @@ void build ()
 
 int main ()
 {
-	cin >> n ;
+	int st , ed ;
+	cin >> n >> st >> ed ;
 	for ( int i = 0 ; i < n ; i++ )	scanf ( " %d " , t+n+i ) ;
 	build () ;
-	cout << query ( 1 , 5 );
+	cout << query ( st , ed );
 }
