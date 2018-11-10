@@ -38,7 +38,8 @@ int main ()
 	cout << query ( st-1 , ed );
 }
 // https://codeforces.com/blog/entry/18051
-//index start at 1
+// program runs based on index = 0
+// but you can input based on index = 1 on QUERY function because I decrease st by one at cout << query
 
 /*
 5 1 5
