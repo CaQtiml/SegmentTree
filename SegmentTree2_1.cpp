@@ -10,7 +10,7 @@ void update ( int i , int v )
 	}
 }
 
-int query ( int l , int r )
+int query ( int l , int r ) // query in range [l,r)
 {
 	int mn = 1e9 ;
 	for ( l += n , r += n ; l < r ; l >>= 1 , r >>= 1 )
