@@ -9,7 +9,8 @@ void update ( int i , int val )
 		t[ i >> 1 ] = t[ i ] + t[ i ^ 1 ] ;
 	}
 }
-int query ( int l , int r )
+int query ( int l , int r ) // query in range [l,r)
+{
 {
 	int sum = 0;
 	for ( l += n , r += n ; l < r ; l >>= 1 , r >>= 1 )
@@ -34,7 +35,8 @@ int main ()
 	build () ;
 	cout << query ( st-1 , ed ) ;
 }
-//index start at 1
+// program runs based on index = 0
+// but you can input based on index = 1 on QUERY function because I decrease st by one at cout << query
 
 /*
 5 1 5
