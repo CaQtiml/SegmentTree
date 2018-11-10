@@ -11,7 +11,6 @@ void update ( int i , int val )
 }
 int query ( int l , int r ) // query in range [l,r)
 {
-{
 	int sum = 0;
 	for ( l += n , r += n ; l < r ; l >>= 1 , r >>= 1 )
 	{
