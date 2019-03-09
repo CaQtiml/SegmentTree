@@ -35,11 +35,11 @@ int main ()
 	cin >> n >> st >> ed ;
 	for ( int i = 0 ; i < n ; i++ )	scanf ( " %d " , t+n+i ) ;
 	build () ;
+	/*Input based on index 1 , work in range [st,ed]*/
 	cout << query ( st-1 , ed );
 }
 // https://codeforces.com/blog/entry/18051
-// program runs based on index = 0
-// but you can input based on index = 1 on QUERY function because I decrease st by one at cout << query
+// Originally, program runs using index = 0 to n-1 and show the output from [st,ed) i.e [0,16)
 
 /*
 5 1 5
